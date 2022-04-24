@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    border: 1px solid #ddd;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+#answers {
+    text-align: center;
+}
+
+#answers button {
+    width: 200px;
+}
