@@ -3,16 +3,40 @@
 }
 
 #container {
-    border: 1px solid #ddd;
     width: 500px;
-    height: 500px;
+    height: 400px;
     margin: auto;
+}
+
+#card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
 }
 
 #answers {
     text-align: center;
+    margin: 20px 0;
 }
 
 #answers button {
-    width: 200px;
+    width: 80%;
+    padding: 10px;
+    margin: 7px 0;
+}
+
+#result {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#buttons {
+    margin: auto;
+    text-align: center;
+}
+
+#buttons button {
+    padding: 5px;
+    width: 60px;
 }

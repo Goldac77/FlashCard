@@ -1,14 +1,19 @@
 const url = `https://opentdb.com/api.php?amount=1&type=multiple`;
-let question = document.querySelector("#question");
-let result = document.querySelector("#result");
-let option1 = document.querySelector("#ans_option1");
-let option2 = document.querySelector("#ans_option2");
-let option3 = document.querySelector("#ans_option3");
-let option4 = document.querySelector("#ans_option4");
-let optionList = [option1, option2, option3, option4];
+const question = document.querySelector("#question");
+const result = document.querySelector("#result");
+const option1 = document.querySelector("#ans_option1");
+const option2 = document.querySelector("#ans_option2");
+const option3 = document.querySelector("#ans_option3");
+const option4 = document.querySelector("#ans_option4");
+const optionList = [option1, option2, option3, option4];
+const skipBtn = document.querySelector("#skip_btn");
+const nextBtn = document.querySelector("#next_btn");
 
 //request API data when page loads
 window.onload = requestApiData();
+
+//keep the next button disabled until first selection
+nextBtn.disabled = true;
 
 //function to resuqest API data
 async function requestApiData() {
@@ -40,14 +45,28 @@ function useApiData(data) {
         optionList.forEach(option => {
             option.addEventListener("click", function(){
                 if(option.innerHTML == correctAnswer){
-                   result.innerHTML = "That's Correct" 
+                   result.innerHTML = "That's Correct"
                 } else {
                     result.innerHTML = "That's Wrong"
+                    skipBtn.disabled = true;
                 }
+
+                /*disable all buttons after first selection
+                and enable the next button*/
+                optionList.forEach(x => {
+                    x.disabled = true;
+                    nextBtn.disabled = false;
+                })
             })
         });
     }
     checkAnswer();
 }
 
+//reload the page
+function reloadPage(){
+    return location.reload()
+}
 
+skipBtn.addEventListener("click", reloadPage);
+nextBtn.addEventListener("click", reloadPage);

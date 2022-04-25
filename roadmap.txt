@@ -2,13 +2,4 @@ images from unsplash:
 1. Merve Sehirli Nasir
 2. Hamed Daram
 
-things i'll need to keep in mind for general design:
-1. bootstrap slideshow/carousel
---this is for the slideshow of the flashcards
---the cards will have two buttons at the button;
---skip button is active if no answer is selected
---next button if an answer is selected
---the slideshow will have indicators
---check here for reference: https://getbootstrap.com/docs/4.0/components/carousel/#usage
-
 2. answers will be buttons with hover effects(background-color change, box-shadow change, etc..)
