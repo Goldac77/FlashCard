@@ -1,4 +1,6 @@
 const url = `https://opentdb.com/api.php?amount=1&type=multiple`;
+const category = document.querySelector("#category");
+const difficulty = document.querySelector("#difficulty");
 const question = document.querySelector("#question");
 const result = document.querySelector("#result");
 const option1 = document.querySelector("#ans_option1");
@@ -8,6 +10,8 @@ const option4 = document.querySelector("#ans_option4");
 const optionList = [option1, option2, option3, option4];
 const skipBtn = document.querySelector("#skip_btn");
 const nextBtn = document.querySelector("#next_btn");
+const scoreBoard = document.querySelector("#score");
+
 
 //request API data when page loads
 window.onload = requestApiData();
@@ -34,6 +38,7 @@ function useApiData(data) {
     console.log(asnwersList)
 
     //displaying the data
+    category.innerHTML = data.results[0].category;
     question.innerHTML = data.results[0].question;
     option1.innerHTML = asnwersList[0];
     option2.innerHTML = asnwersList[1];
@@ -45,18 +50,21 @@ function useApiData(data) {
         optionList.forEach(option => {
             option.addEventListener("click", function(){
                 if(option.innerHTML == correctAnswer){
-                   result.innerHTML = "That's Correct"
+                   result.innerHTML = "That's Correct";
+                   skipBtn.disabled = true;
+                   result.style.color = "#1C9E48";
                 } else {
                     result.innerHTML = "That's Wrong"
                     skipBtn.disabled = true;
+                    result.style.color = "#DD1C5E";
                 }
 
-                /*disable all buttons after first selection
-                and enable the next button*/
+                //disable all buttons after first selection
                 optionList.forEach(x => {
                     x.disabled = true;
-                    nextBtn.disabled = false;
                 })
+                //enable next button after first selection
+                nextBtn.disabled = false;
             })
         });
     }
@@ -67,6 +75,5 @@ function useApiData(data) {
 function reloadPage(){
     return location.reload()
 }
-
 skipBtn.addEventListener("click", reloadPage);
 nextBtn.addEventListener("click", reloadPage);

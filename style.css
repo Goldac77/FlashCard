@@ -1,29 +1,83 @@
 * {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#container {
-    width: 500px;
-    height: 400px;
+body {
+    background-image: url("images/bg_2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     margin: auto;
 }
 
+h1, h3 {
+    text-align: center;
+    color: #FFF;
+}
+
+h1 {
+    font-style: italic;
+}
+
+#container {
+    width: 350px;
+    height: 380px;
+    margin: auto;
+    margin-top: 120px;
+    font-weight: bold;
+}
+
+#score {
+    color: #FFF;
+}
+
 #card {
-    border: 1px solid #ddd;
-    padding: 20px;
+    height: 480px;
+    border-style: none;
+    padding: 5px 20px 20px 20px;
     border-radius: 10px;
     margin: 20px 0;
+    box-shadow: 0 6px 20px 0 rgba(34, 29, 26, 0.651);
+    background-color: #314152;
+    color: #FFF;
+}
+
+#card p{
+    text-align: center;
+    color: #F1B814;
+}
+
+#category {
+    text-align: center;
+}
+
+#question {
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 #answers {
     text-align: center;
-    margin: 20px 0;
+    margin: 30px 0 20px 0;
 }
 
 #answers button {
-    width: 80%;
+    width: 85%;
     padding: 10px;
     margin: 7px 0;
+    box-shadow: 0 3px 5px 0 rgba(8, 214, 111, 0.411);
+    background-color: #0DA3D6;
+    border-radius: 10px;
+    border-style: none;
+    color: #FFF;
+    font-size: 14px;
+}
+
+#answers button:hover {
+    background-color: #1F1641;
+    color: #FFF;
 }
 
 #result {
@@ -37,6 +91,38 @@
 }
 
 #buttons button {
-    padding: 5px;
-    width: 60px;
+    padding: 10px;
+    width: 30%;
+    border-radius: 10px;
+    margin: 0px 20px 20px 30px;
+    background-color: #FFF;
+}
+
+#skip_btn {
+    border-color: #F15838;
+    border-style: ridge;
+}
+
+#skip_btn:hover {
+    background-color: #F15838;
+    color: #FFF;
+    border-style: none;
+}
+
+#next_btn {
+    border-color: #55D9C1;
+    border-style: ridge;
+}
+
+#next_btn:hover {
+    background-color: #55D9C1;
+    color: #FFF;
+    border-style: none;
+}
+
+/*Tweeking the page on smaller mobile devices*/
+@media screen and (max-width: 400px) {
+    #container {
+        width: 90vw;
+    }
 }
