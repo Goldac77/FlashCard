@@ -11,7 +11,7 @@ const optionList = [option1, option2, option3, option4];
 const skipBtn = document.querySelector("#skip_btn");
 const nextBtn = document.querySelector("#next_btn");
 const scoreBoard = document.querySelector("#score");
-
+let scoreValue = 0;
 
 //request API data when page loads
 window.onload = requestApiData();
@@ -45,14 +45,29 @@ function useApiData(data) {
     option3.innerHTML = asnwersList[2];
     option4.innerHTML = asnwersList[3];
 
+    //saves, and restores the score value on page refresh
+    if(sessionStorage.getItem("Scores")){
+        scoreBoard.innerHTML = `Score: ${sessionStorage.getItem("Scores")}`
+        scoreValue = sessionStorage.getItem("Scores")
+    } else {
+        sessionStorage.setItem("Scores", scoreValue)
+        scoreBoard.innerHTML = `Score: ${sessionStorage.getItem("Scores", scoreValue)}`
+    }
+
+
     //check if the correct answer is selected
     function checkAnswer(data) {
         optionList.forEach(option => {
             option.addEventListener("click", function(){
                 if(option.innerHTML == correctAnswer){
-                   result.innerHTML = "That's Correct";
-                   skipBtn.disabled = true;
-                   result.style.color = "#1C9E48";
+                    result.innerHTML = "That's Correct";
+                    skipBtn.disabled = true;
+                    result.style.color = "#1C9E48";
+                    //increase the score value
+                    scoreValue++;
+                    sessionStorage.setItem("Scores", scoreValue);
+                    scoreBoard.innerHTML = `Score: ${sessionStorage.getItem("Scores")}`
+
                 } else {
                     result.innerHTML = "That's Wrong"
                     skipBtn.disabled = true;
