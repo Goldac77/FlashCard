@@ -2,4 +2,18 @@ images from unsplash:
 1. Merve Sehirli Nasir
 2. Hamed Daram
 
-2. answers will be buttons with hover effects(background-color change, box-shadow change, etc..)
+Styling Data
+>>>for all;
+	font-weight: bold,
+	font-family: Arial, Helvetica, sans-serif,
+
+>>>p tag;
+	color: #F1B814
+
+>>>answers;
+	background-color: #0DA3D6,
+	background-color(onhover): #1F1641
+
+>>>buttons;
+ 	skip_btn; color: #F15838;
+	next_btn; color: #55D9C1;

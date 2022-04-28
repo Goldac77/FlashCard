@@ -1,4 +1,7 @@
 const url = `https://opentdb.com/api.php?amount=1&type=multiple`;
+const cardNum = document.querySelector("#card_no");
+const shuffleBtn = document.querySelector("#shuffle");
+const resetBtn = document.querySelector("#reset");
 const category = document.querySelector("#category");
 const difficulty = document.querySelector("#difficulty");
 const question = document.querySelector("#question");
@@ -12,6 +15,7 @@ const skipBtn = document.querySelector("#skip_btn");
 const nextBtn = document.querySelector("#next_btn");
 const scoreBoard = document.querySelector("#score");
 let scoreValue = 0;
+let card = 1;
 
 //request API data when page loads
 window.onload = requestApiData();
@@ -54,6 +58,15 @@ function useApiData(data) {
         scoreBoard.innerHTML = `Score: ${sessionStorage.getItem("Scores", scoreValue)}`
     }
 
+    //saves, and restores the card number on page refresh
+    if(sessionStorage.getItem("Card No.")){
+        card = sessionStorage.getItem("Card No.")
+        cardNum.innerHTML = `${card}/30`;
+    } else {
+        sessionStorage.setItem("Card No.", card);
+        cardNum.innerHTML = `${card}/30`;
+    }
+
 
     //check if the correct answer is selected
     function checkAnswer(data) {
@@ -90,5 +103,36 @@ function useApiData(data) {
 function reloadPage(){
     return location.reload()
 }
-skipBtn.addEventListener("click", reloadPage);
-nextBtn.addEventListener("click", reloadPage);
+
+//increase card number value, and refersh page on skip/next is clicked
+skipBtn.addEventListener("click", function(){
+    card++;
+    reloadPage();
+    sessionStorage.setItem("Card No.", card);
+    showResuls();
+});
+nextBtn.addEventListener("click", function(){
+    card++;
+    reloadPage();
+    sessionStorage.setItem("Card No.", card);
+    showResuls();
+});
+
+//reset the card number after 30 questions
+function showResuls(){
+    if(card == 31){
+        alert("the end");
+        sessionStorage.clear();
+    }
+}
+
+//shuffle button; reload the page to show a new question
+shuffleBtn.addEventListener("click", function(){
+    reloadPage();
+})
+
+//reset button; clear all data and reload page
+resetBtn.addEventListener("click", function(){
+    sessionStorage.clear();
+    reloadPage();
+})
