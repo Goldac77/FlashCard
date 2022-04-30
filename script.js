@@ -121,7 +121,7 @@ nextBtn.addEventListener("click", function(){
 //reset the card number after 30 questions
 function showResuls(){
     if(card == 31){
-        alert("the end");
+        alert(`Total Score: ${scoreValue}/30`)
         sessionStorage.clear();
     }
 }
