@@ -26,9 +26,7 @@ nextBtn.disabled = true;
 //function to resuqest API data
 async function requestApiData() {
     let response = await fetch(url);
-    console.log(response);
-    let data = await response.json();
-    console.log(data);  
+    let data = await response.json(); 
     useApiData(data)
 }
 
@@ -39,7 +37,6 @@ function useApiData(data) {
     let index = Math.floor(Math.random() * asnwersList.length)
     //randomly place the correct answer in answersList
     asnwersList.splice(index, 0, correctAnswer);
-    console.log(asnwersList)
 
     //displaying the data
     category.innerHTML = data.results[0].category;
