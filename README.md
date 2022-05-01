@@ -13,12 +13,13 @@ At the end, the total score is displayed and the user can choose to try again
 <li>Option to select the category the questions are chosen from<i>!!!COMING SOON!!!</i></li>
 
 <h3>Resoureces Used</h3>
-Background image used in this project is from <br>
-Hamed Daram (Unsplash): https://unsplash.com/@hameddaram
+<li>Background image used in this project is from <br>
+Hamed Daram (Unsplash): https://unsplash.com/@hameddaram</li>
+<li>Favicons made from <a href="https://favicon.io/favicon-converter/">favicon.io</a></li>
+<li>Background remover from <a href="https://www.remove.bg/">remove.bg</a></li>
 
 <h3>Technologies Used</h3>
 <li>API from <a href="https://opentdb.com/api_config.php">Trivia API:</a></li>
-<li>Favicons made from <a href="https://favicon.io/favicon-converter/">favicon.io</a></li>
 <li>Vanilla Javascript</li>
 
 <h3>Additional Info</h3>
