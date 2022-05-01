@@ -19,6 +19,15 @@ h1, h3 {
 
 h1 {
     font-style: italic;
+    color: #ED22BA;
+}
+
+h1 span {
+    color: #70E122;
+}
+
+h3 {
+    color: #1972e6;
 }
 
 #container {
