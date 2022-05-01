@@ -154,7 +154,47 @@ h3 {
 
 /*Tweeking the page on smaller mobile devices*/
 @media screen and (max-width: 400px) {
-    #container {
+    #container{
         width: 90vw;
     }
+}
+
+/*Styling for the results page*/
+#result_card {
+    border: 1px solid;
+    width: 350px;
+    height: 220px;
+    margin: auto;
+    padding: 0.5px 0;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #314152;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px 0 rgba(34, 29, 26, 0.651);
+    border-style: none;
+}
+
+#score_data {
+    color: #FFF;
+    font-weight: bold;
+}
+
+#choose button {
+    text-decoration: none;
+    color: #000;
+    background-color: #FFF;
+    padding: 10px 12px;
+    margin-top: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 100px;
+}
+
+#home {
+    border-color: #89D31B;
+}
+
+#home:hover {
+    color: #FFF;
+    background-color: #89D31B;
 }

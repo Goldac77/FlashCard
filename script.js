@@ -61,10 +61,10 @@ function useApiData(data) {
     //saves, and restores the card number on page refresh
     if(sessionStorage.getItem("Card No.")){
         card = sessionStorage.getItem("Card No.")
-        cardNum.innerHTML = `${card}/30`;
+        cardNum.innerHTML = `${card}/20`;
     } else {
         sessionStorage.setItem("Card No.", card);
-        cardNum.innerHTML = `${card}/30`;
+        cardNum.innerHTML = `${card}/20`;
     }
 
 
@@ -118,11 +118,10 @@ nextBtn.addEventListener("click", function(){
     showResuls();
 });
 
-//reset the card number after 30 questions
+//reset the card number after 20 questions
 function showResuls(){
-    if(card == 31){
-        alert(`Total Score: ${scoreValue}/30`)
-        sessionStorage.clear();
+    if(card == 21){
+        window.open("results.html", "_self");
     }
 }
 
