@@ -22,5 +22,5 @@ At the end, the total score is displayed and the user can choose to try again
 <li>Vanilla Javascript</li>
 
 <h3>Additional Info</h3>
-<p>This is my work on the <a href="https://www.devjam.org/project/039c8aa3-999c-403e-97cf-2ccd2b3626c6">DevJam Flash Cards Projects</a> <br>
+<p>This is my work on the <a href="https://www.devjam.org/project/039c8aa3-999c-403e-97cf-2ccd2b3626c6" target="_blank">DevJam Flash Cards Projects</a> <br>
 </p>
