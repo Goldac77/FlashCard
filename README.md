@@ -2,8 +2,8 @@
 ![alt text](https://github.com/Goldac77/FlashCard/blob/main/images/FLASH_CARDS_2-removebg-preview.png)
 
 <h2>About Project</h2>
-<p>This is webpage displays 20 random questions with multiple answers <br>
-The user picks an answer and moves on, or can skip the question <br>
+<p>This webpage displays 20 random questions with multiple answers <br>
+The user picks an answer and moves on to the next, or can skip the question <br>
 At the end, the total score is displayed and the user can choose to try again
 </p>
 
