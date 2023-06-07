@@ -70,6 +70,7 @@ function useApiData(data) {
         optionList.forEach(option => {
             option.addEventListener("click", function(){
                 if(option.innerHTML == correctAnswer){
+                    option.style.backgroundColor = "#1C9E48";
                     result.innerHTML = "That's Correct";
                     skipBtn.disabled = true;
                     result.style.color = "#1C9E48";
@@ -79,6 +80,13 @@ function useApiData(data) {
                     scoreBoard.innerHTML = `Score: ${sessionStorage.getItem("Scores")}`
 
                 } else {
+                    optionList.forEach(x => {
+                        if (x.innerHTML == correctAnswer) {
+                            x.style.backgroundColor = "#1C9E48"; // Correct answer is green
+                        } else {
+                            x.style.backgroundColor = "#DD1C5E"; // Incorrect answers are red
+                        }
+                    });
                     result.innerHTML = "That's Wrong"
                     skipBtn.disabled = true;
                     result.style.color = "#DD1C5E";
