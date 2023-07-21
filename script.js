@@ -125,7 +125,7 @@ nextBtn.addEventListener("click", function(){
 
 //reset the card number after 20 questions
 function showResuls(){
-    if(card == 6){
+    if(card == 21){
         window.open("results.html", "_self");
     }
 }
